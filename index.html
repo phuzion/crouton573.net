@@ -66,11 +66,11 @@
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
-<img src="Crouton/crouton.png" alt="Crouton"> <!-- nice -->
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
+<img src="Crouton/crouton.png" class="sound-trigger" data-sound"Crouton/nice.mp3" alt="Crouton"> <!-- nice -->
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
@@ -417,11 +417,11 @@
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
-<img src="Crouton/crouton.png" alt="Crouton"> <!-- blaze it -->
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
+<img src="Crouton/crouton.png" class="sound-trigger" data-sound"Crouton/swed.mp3" alt="Crouton"> <!-- blaze it -->
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
@@ -575,5 +575,20 @@
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
+
+<audio id="player"></audio>
+
+<script>
+const player = document.getElementById('player');
+
+document.querySelectorAll('.sound-trigger').forEach(img => {
+  img.addEventListener('click', () => {
+    const sound = img.getAttribute('data-sound');
+    
+    player.src = sound;
+    player.play();
+  });
+});
+</script>
 
 </body></html>
