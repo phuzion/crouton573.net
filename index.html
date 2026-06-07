@@ -68,7 +68,7 @@
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
-<img src="Crouton/crouton.png" alt="Crouton">
+<img id="sixseven" src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" alt="Crouton">
 <img src="Crouton/crouton.png" class="sound-trigger" data-sound="Crouton/nice.mp3" alt="Crouton"> <!-- nice -->
 <img src="Crouton/crouton.png" alt="Crouton">
@@ -578,6 +578,20 @@
 
 <audio id="player"></audio>
 
+<style>
+@keyframes jiggle-6-7 {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.jiggling {
+    animation: jiggle-6-7 0.4s ease-in-out infinite;
+}
+</style>
+
+
 <script>
 const player = document.getElementById('player');
 
@@ -588,6 +602,21 @@ document.querySelectorAll('.sound-trigger').forEach(img => {
     player.src = sound;
     player.play();
   });
+});
+
+// Target the image and the body
+const sixseven = document.getElementById('sixseven');
+const body = document.body;
+
+// Listen for a click on the image
+sixseven.addEventListener('click', () => {
+    // Add the jiggle animation class to the body
+    body.classList.add('jiggling');
+    
+    // Stop the jiggle after 3 seconds
+    setTimeout(() => {
+        body.classList.remove('jiggling');
+    }, 3000);
 });
 </script>
 
